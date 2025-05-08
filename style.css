@@ -5,8 +5,9 @@ body {
   color: #e6f0ff;
   line-height: 1.6;
   scroll-behavior: smooth;
-  background: linear-gradient(to bottom, #0a0f1a, #0b1625);
-  background-attachment: fixed;
+  background: linear-gradient(-45deg, #0c0f1a, #1e90ff, #0a192f, #0c0f1a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
 }
 
 .hero {
@@ -101,4 +102,16 @@ footer {
 
 .experience li {
   margin-bottom: 0.4em;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
