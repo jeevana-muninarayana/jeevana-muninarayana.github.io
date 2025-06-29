@@ -1,109 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jeevana Muninarayana | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevana Muninarayana | Cybersecurity Professional</title>
+    <meta name="description" content="Cybersecurity Professional specializing in application security, threat analysis, and secure systems engineering">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="hero">
-    <img src="assets/my-photo.jpeg" alt="Jeevana Muninarayana">
-    <h1>Jeevana Muninarayana</h1>
-    <p>Cybersecurity Engineer | Cloud | IAM | Threat Intel | DevSecOps</p>
-    <p class="tagline"> Open to any role in the cybersecurity domain</p>
-  </header>
-
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      With professional experience in cloud security, threat detection, and identity access management, 
-      I’ve secured AWS, Azure, and GCP environments at enterprise scale. 
-      I hold a Master’s in Cybersecurity and bring deep technical knowledge across NIST, MITRE, Terraform, SIEMs, and more.
-    </p>
-  </section>
-
-  <section class="experience">
-    <h2>💼 Professional Experience</h2>
-  
-    <div class="job">
-      <strong>Software Engineer – Community Dreams Foundation</strong><br />
-      <em>Jersey City, NJ | Nov 2024 – Present</em>
-      <ul>
-        <li>Established secure access policies across cloud environments, achieving 100% NIST/CIS compliance for 50+ team members.</li>
-        <li>Streamlined security reporting using Python, cutting manual effort by 50% and reducing report time from 2 hours to 30 minutes.</li>
-        <li>Facilitated vulnerability assessments on 50+ systems; remediated 85% of critical CVEs in 30 days.</li>
-        <li>Implemented RBAC strategies, reducing unauthorized access incidents by 40%.</li>
-      </ul>
+    <!-- Animated Background -->
+    <div class="cyber-background">
+        <div class="grid-lines"></div>
+        <div class="floating-particles"></div>
     </div>
 
-    <div class="job">
-      <strong>Research Assistant – Pace University</strong><br />
-      <em>New York, NY | Sep 2023 – Jun 2024</em>
-      <ul>
-        <li>Worked on containerization and DevSecOps workflows using Docker and Linux for reproducible research environments.</li>
-        <li>Supported development of a deep learning–based system that verifies image integrity over TCP network traffic.</li>
-        <li>Implemented and tested image tampering detection pipelines using OpenCV, TensorFlow, and raw byte stream validation.</li>
-        <li>Enhanced container orchestration reliability, reducing model deployment issues by 60%.</li>
-      </ul>
-    </div>  
-  
-    <div class="job">
-      <strong>Senior Systems Engineer – Infosys</strong><br />
-      <em>Bangalore, India | Nov 2021 – Jul 2022</em>
-      <ul>
-        <li>Hardened Microsoft Azure and AWS cloud environments, reducing attack surfaces by 40% across 200+ resources.</li>
-        <li>Built Zero Trust IAM policies protecting 5,000+ users; reduced unauthorized access attempts by 60%.</li>
-        <li>Automated patching and scanning workflows using PowerShell; cut unpatched vulnerabilities by 45%.</li>
-        <li>Built Splunk SIEM rules; improved detection rate and reduced false positives by 20%.</li>
-      </ul>
-    </div>
-  
-    <div class="job">
-      <strong>Systems Engineer – Infosys</strong><br />
-      <em>Mysore, India | Nov 2019 – Oct 2021</em>
-      <ul>
-        <li>Managed user access controls across AWS IAM, Okta, and Azure AD for 10,000+ users; reduced access-related incidents by 40%.</li>
-        <li>Deployed and maintained firewalls, VPNs, and NAC policies; prevented 30% of unauthorized access attempts.</li>
-        <li>Ran vulnerability and patch compliance assessments; achieved 98% NIST/CIS benchmark compliance.</li>
-        <li>Improved SIEM detection accuracy by 40%, reduced phishing incidents by 25%, and hosted internal security training.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">JM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="typing-text">Jeevana Muninarayana</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Cybersecurity Professional</h2>
+                    <p class="hero-description">
+                        Specializing in application security, threat analysis, and secure systems engineering. 
+                        Passionate about protecting digital assets and building resilient security frameworks.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="./assets/Jeevana Muninarayana - Resume.pdf" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="./assets/my-photo.jpeg" alt="Jeevana Muninarayana" class="profile-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
 
-  <section class="projects">
-    <h2> Projects</h2>
-    <ul>
-      <li><a href="https://github.com/jeevana-muninarayana/security-policy-validator">Security Policy Validator</a></li>
-      <li><a href="https://github.com/jeevana-muninarayana/passwordless-auth-pilot">Passwordless Authentication Pilot</a></li>
-      <li><a href="https://github.com/jeevana-muninarayana/data-acquisition-orchestration">Terraform Log Orchestration Framework</a></li>
-      <li><a href="https://github.com/jeevana-muninarayana/image-integrity-verification">Image Integrity Verification over TCP</a></li>
-      <li><a href="https://github.com/jeevana-muninarayana/cloud-network-security-baseline">Cloud Network Security Baseline (CIS AWS)</a></li>
-      <li><a href="https://github.com/jeevana-muninarayana/zero-trust-access">Zero Trust Access Model with Okta & AWS</a></li>
-    </ul>
-  </section>  
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I'm a dedicated cybersecurity professional with expertise in application security, 
+                        threat analysis, and secure systems engineering. Currently seeking STEM-OPT-based 
+                        opportunities in the United States.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security First</h3>
+                            <p>Implementing security-by-design principles in every project</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <h3>Secure Development</h3>
+                            <p>Expertise in secure coding practices and vulnerability assessment</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-search"></i>
+                            <h3>Threat Analysis</h3>
+                            <p>Proactive threat hunting and security incident response</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Security Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Burp Suite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">OWASP ZAP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Nessus</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="category-title">Programming</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <section class="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li> Automated IAM workflows, reducing access incidents by 50%</li>
-      <li> Improved Azure/AWS security posture across 200+ resources</li>
-      <li> Delivered SOAR dashboards & threat intel pipelines with MITRE ATT&CK</li>
-      <li> Published detailed security automation reports for SOC 2, PCI</li>
-    </ul>
-  </section>
+                <div class="skill-category">
+                    <h3 class="category-title">Cloud & Infrastructure</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">AWS Security</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Kubernetes</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="resume">
-    <h2>Resume</h2>
-    <a href="assets/Jeevana Muninarayana - Resume.pdf" target="_blank" class="resume-link">📄 View Resume</a>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Vulnerability Assessment Tool</h3>
+                        <p class="project-description">
+                            Automated vulnerability scanner built with Python, featuring OWASP Top 10 detection 
+                            and comprehensive reporting capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <p>📫 mjeevana00@gmail.com | <a href="https://www.linkedin.com/in/jeevana-muninarayana/" target="_blank">LinkedIn</a></p>
-  </footer>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Secure Web Application</h3>
+                        <p class="project-description">
+                            Full-stack web application implementing security best practices including 
+                            input validation, authentication, and secure session management.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Network Security Monitor</h3>
+                        <p class="project-description">
+                            Real-time network monitoring system with intrusion detection capabilities 
+                            and automated threat response mechanisms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scapy</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in discussing cybersecurity opportunities and collaborating on innovative security solutions.</p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/jeevana-muninarayana" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Jeevana Muninarayana. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
