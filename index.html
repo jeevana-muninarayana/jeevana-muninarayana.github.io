@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeevana Muninarayana | Senior Security Engineer</title>
-    <meta name="description" content="Senior Security Engineer specializing in application security, threat analysis, and secure systems engineering">
-    <meta name="keywords" content="cybersecurity, application security, threat analysis, penetration testing, security engineer">
+    <meta name="description" content="Senior Security Engineer specializing in product security, cloud infrastructure security, and detection & response.">
+    <meta name="keywords" content="cybersecurity, application security, threat analysis, penetration testing, security engineer, SOC 2, DevSecOps">
     <meta name="author" content="Jeevana Muninarayana">
-    
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    
     <style>
-        /* CSS Variables */
         :root {
             --primary-dark: #0a0a0a;
             --secondary-dark: #121212;
@@ -39,18 +33,8 @@
             --border-radius: 15px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--primary-dark);
@@ -58,1479 +42,553 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-
-        /* Animated Background */
-        .cyber-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            overflow: hidden;
-        }
-
+        .cyber-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; overflow: hidden; }
         .cyber-background::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0,212,255,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0,255,136,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%);
             pointer-events: none;
         }
-
         .grid-lines {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0,212,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
             opacity: 0.5;
         }
-
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        .floating-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 0.5rem;
-        }
-
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-link:hover {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary-blue);
-        }
-
-        .nav-link.active {
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--primary-blue);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-light);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text {
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--secondary-blue);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.875rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: var(--primary-dark);
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--primary-blue);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-blue);
-            color: var(--primary-dark);
-        }
-
-        /* Profile Image */
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid var(--primary-blue);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 2px solid var(--accent-green);
-            border-radius: 50%;
-            animation: rotate 15s linear infinite;
-        }
-
-        .image-overlay::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid var(--accent-purple);
-            border-radius: 50%;
-            animation: rotate 10s linear infinite reverse;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-arrow {
-            width: 30px;
-            height: 30px;
-            border: 2px solid var(--primary-blue);
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 6rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--text-white);
-            margin-bottom: 1rem;
-        }
-
-        .title-underline {
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 1rem auto 0;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--secondary-dark);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .about-intro {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-        }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .highlight-item {
-            background: var(--tertiary-dark);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .highlight-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-            border-color: var(--primary-blue);
-        }
-
-        .highlight-item i {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-        }
-
-        .highlight-item h3 {
-            font-size: 1.3rem;
-            color: var(--text-white);
-            margin-bottom: 1rem;
-        }
-
-        .highlight-item p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: var(--primary-dark);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--secondary-dark);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .skill-category:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
-        }
-
-        .category-title {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-title i {
-            font-size: 1.1rem;
-        }
-
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .skill-percentage {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Projects Section */
-        .projects {
-            background: var(--secondary-dark);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--tertiary-dark);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-            border-color: var(--primary-blue);
-        }
-
-        .project-image {
-            height: 200px;
-            background: var(--gradient-dark);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-secondary);
-            opacity: 0.1;
-        }
-
-        .project-placeholder {
-            font-size: 3rem;
-            color: var(--primary-blue);
-            z-index: 1;
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            color: var(--primary-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .project-link:hover {
-            background: var(--accent-green);
-            transform: scale(1.1);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-title {
-            color: var(--text-white);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary-blue);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        /* Experience Section */
-        .experience {
-            background: var(--primary-dark);
-        }
-
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 2rem 0 2rem 3rem;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 2rem;
-            width: 14px;
-            height: 14px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-
-        .timeline-content {
-            background: var(--secondary-dark);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .timeline-content:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
-        }
-
-        .timeline-date {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            color: var(--text-white);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: var(--accent-green);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--secondary-dark);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-light);
-            text-decoration: none;
-            padding: 1rem;
-            background: var(--tertiary-dark);
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .contact-link:hover {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--primary-blue);
-            border-color: var(--primary-blue);
-            transform: translateX(5px);
-        }
-
-        .contact-link i {
-            font-size: 1.2rem;
-            width: 20px;
-        }
-
-        .contact-form {
-            background: var(--tertiary-dark);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-light);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--secondary-dark);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-muted);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
+        @keyframes gridMove { 0% { transform: translate(0,0); } 100% { transform: translate(50px,50px); } }
+        .floating-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        /* Navbar */
+        .navbar { position: fixed; top: 0; width: 100%; background: rgba(18,18,18,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-size: 1.5rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-menu { display: flex; list-style: none; gap: 0.5rem; }
+        .nav-link { color: var(--text-light); text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: var(--transition); }
+        .nav-link:hover, .nav-link.active { background: rgba(0,212,255,0.15); color: var(--primary-blue); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+        .hamburger span { width: 25px; height: 3px; background: var(--text-light); transition: var(--transition); border-radius: 2px; }
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2rem 4rem; position: relative; }
+        .hero-container { max-width: 1200px; margin: 0 auto; width: 100%; }
+        .hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+        .hero-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-subtitle { font-size: clamp(1.2rem, 3vw, 2rem); color: var(--secondary-blue); font-weight: 600; margin-bottom: 1.5rem; }
+        .hero-description { font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1rem; max-width: 500px; }
+        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+        .hero-tag { background: rgba(0,212,255,0.1); color: var(--primary-blue); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid rgba(0,212,255,0.3); }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { padding: 0.875rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition); cursor: pointer; border: none; white-space: nowrap; }
+        .btn-primary { background: var(--gradient-primary); color: var(--primary-dark); box-shadow: 0 4px 15px rgba(0,212,255,0.3); }
+        .btn-secondary { background: transparent; color: var(--text-light); border: 2px solid var(--primary-blue); }
+        .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .btn-secondary:hover { background: var(--primary-blue); color: var(--primary-dark); }
+        .hero-image { position: relative; display: flex; justify-content: center; align-items: center; }
+        .image-container { position: relative; width: 300px; height: 300px; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--primary-blue); box-shadow: var(--shadow-glow); }
+        .image-overlay { position: absolute; top: -15px; left: -15px; right: -15px; bottom: -15px; border: 2px solid var(--accent-green); border-radius: 50%; animation: rotate 15s linear infinite; }
+        .image-overlay::before { content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 1px solid var(--accent-purple); border-radius: 50%; animation: rotate 10s linear infinite reverse; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; }
+        .scroll-arrow { width: 30px; height: 30px; border: 2px solid var(--primary-blue); border-top: none; border-right: none; transform: rotate(-45deg); }
+        @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+        /* Sections */
+        .section { padding: 6rem 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text-white); margin-bottom: 1rem; }
+        .title-underline { width: 80px; height: 4px; background: var(--gradient-primary); margin: 0 auto; border-radius: 2px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0; }
+        /* About */
+        .about { background: var(--secondary-dark); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 3rem; }
+        .about-text h3 { font-size: 1.6rem; font-weight: 700; color: var(--text-white); margin-bottom: 1rem; }
+        .about-text p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; font-size: 1rem; }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .stat-item { background: var(--tertiary-dark); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
+        .stat-item:hover { border-color: var(--primary-blue); transform: translateY(-3px); }
+        .stat-number { font-size: 2rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.3rem; }
+        .about-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .highlight-item { background: var(--tertiary-dark); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
+        .highlight-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,212,255,0.2); border-color: var(--primary-blue); }
+        .highlight-item i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1rem; display: block; }
+        .highlight-item h3 { font-size: 1.1rem; color: var(--text-white); margin-bottom: 0.75rem; }
+        .highlight-item p { color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem; }
+        /* Skills */
+        .skills { background: var(--primary-dark); }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .skill-category { background: var(--secondary-dark); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); transition: var(--transition); }
+        .skill-category:hover { border-color: var(--primary-blue); box-shadow: 0 5px 20px rgba(0,212,255,0.1); }
+        .category-title { color: var(--primary-blue); font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .skill-item { margin-bottom: 1.2rem; }
+        .skill-name { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); font-size: 0.9rem; }
+        .skill-percentage { color: var(--primary-blue); font-size: 0.85rem; font-weight: 600; }
+        .skill-bar { height: 10px; background: rgba(255,255,255,0.08); border-radius: 5px; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,0.05); }
+        .skill-progress { height: 100%; background: var(--gradient-primary); border-radius: 5px; width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        .skill-progress::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        /* Projects */
+        .projects { background: var(--secondary-dark); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--tertiary-dark); border-radius: var(--border-radius); overflow: hidden; transition: var(--transition); border: 1px solid var(--border-color); position: relative; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,212,255,0.2); border-color: var(--primary-blue); }
+        .project-image { height: 200px; background: var(--gradient-dark); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; }
+        .project-image::before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: var(--gradient-secondary); opacity: 0.1; }
+        .project-placeholder { font-size: 3rem; color: var(--primary-blue); z-index: 1; }
+        .project-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); z-index: 2; }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-links { display: flex; gap: 1rem; }
+        .project-link { width: 50px; height: 50px; background: var(--primary-blue); color: var(--primary-dark); display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: var(--transition); font-size: 1.2rem; }
+        .project-link:hover { background: var(--accent-green); transform: scale(1.1); }
+        .project-content { padding: 2rem; }
+        .project-title { color: var(--text-white); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .project-description { color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tech-tag { background: rgba(0,212,255,0.1); color: var(--primary-blue); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid rgba(0,212,255,0.3); }
+        /* Experience */
+        .experience { background: var(--primary-dark); }
+        .experience-timeline { position: relative; max-width: 900px; margin: 0 auto; }
+        .timeline-item { position: relative; padding: 0 0 2.5rem 3rem; border-left: 2px solid var(--border-color); }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -8px; top: 0.5rem; width: 14px; height: 14px; background: var(--primary-blue); border-radius: 50%; box-shadow: 0 0 10px rgba(0,212,255,0.5); }
+        .timeline-content { background: var(--secondary-dark); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); transition: var(--transition); }
+        .timeline-content:hover { border-color: var(--primary-blue); box-shadow: 0 5px 20px rgba(0,212,255,0.1); }
+        .timeline-date { color: var(--primary-blue); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+        .timeline-title { color: var(--text-white); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .timeline-company { color: var(--accent-green); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
+        .timeline-bullets { list-style: none; padding: 0; }
+        .timeline-bullets li { color: var(--text-secondary); line-height: 1.65; margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; font-size: 0.95rem; }
+        .timeline-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--primary-blue); font-size: 0.8rem; top: 0.15rem; }
+        .timeline-bullets li strong { color: var(--text-light); }
+        /* Contact */
+        .contact { background: var(--secondary-dark); }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .contact-info h3 { color: var(--primary-blue); font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+        .contact-info p { color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; }
+        .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-link { display: flex; align-items: center; gap: 1rem; color: var(--text-light); text-decoration: none; padding: 1rem; background: var(--tertiary-dark); border-radius: 10px; border: 1px solid var(--border-color); transition: var(--transition); }
+        .contact-link:hover { background: rgba(0,212,255,0.1); color: var(--primary-blue); border-color: var(--primary-blue); transform: translateX(5px); }
+        .contact-link i { font-size: 1.2rem; width: 20px; color: var(--primary-blue); }
+        .contact-form { background: var(--tertiary-dark); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; color: var(--text-light); font-weight: 500; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 1rem; background: var(--secondary-dark); border: 1px solid var(--border-color); border-radius: 10px; color: var(--text-light); font-family: inherit; font-size: 1rem; transition: var(--transition); }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 10px rgba(0,212,255,0.2); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+        .form-group textarea { resize: vertical; min-height: 130px; }
+        .form-status { padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; display: none; font-size: 0.95rem; }
+        .form-status.success { background: rgba(0,255,136,0.1); color: var(--accent-green); border: 1px solid rgba(0,255,136,0.3); display: block; }
+        .form-status.error { background: rgba(255,51,102,0.1); color: var(--accent-red); border: 1px solid rgba(255,51,102,0.3); display: block; }
         /* Footer */
-        .footer {
-            background: var(--primary-dark);
-            padding: 2rem 0;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .footer p {
-            color: var(--text-secondary);
-        }
-
-        /* Responsive Design */
+        .footer { background: var(--primary-dark); padding: 2rem 0; border-top: 1px solid var(--border-color); text-align: center; }
+        .footer p { color: var(--text-secondary); }
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .slide-in-left { opacity: 0; transform: translateX(-50px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slide-in-left.visible { opacity: 1; transform: translateX(0); }
+        .slide-in-right { opacity: 0; transform: translateX(50px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slide-in-right.visible { opacity: 1; transform: translateX(0); }
+        /* Responsive */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-            
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .contact-content { grid-template-columns: 1fr; gap: 3rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
-
         @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--secondary-dark);
-                flex-direction: column;
-                padding: 2rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-            
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-            
-            .hero {
-                padding: 6rem 1rem 3rem;
-            }
-            
-            .image-container {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-highlights {
-                grid-template-columns: 1fr;
-            }
+            .nav-menu { position: fixed; top: 100%; left: 0; width: 100%; background: var(--secondary-dark); flex-direction: column; padding: 2rem; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: var(--transition); }
+            .nav-menu.active { transform: translateY(0); opacity: 1; visibility: visible; }
+            .hamburger { display: flex; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            .hero { padding: 6rem 1rem 3rem; }
+            .image-container { width: 220px; height: 220px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .section { padding: 4rem 0; }
+            .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+            .about-highlights { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+            .skill-bar { height: 14px; }
         }
-
         @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
+            .container { padding: 0 1rem; }
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
         }
-
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        .mb-1 { margin-bottom: 0.5rem; }
-        .mb-2 { margin-bottom: 1rem; }
-        .mb-3 { margin-bottom: 1.5rem; }
-        .mb-4 { margin-bottom: 2rem; }
-        .mt-1 { margin-top: 0.5rem; }
-        .mt-2 { margin-top: 1rem; }
-        .mt-3 { margin-top: 1.5rem; }
-        .mt-4 { margin-top: 2rem; }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
+    <!-- Background -->
     <div class="cyber-background">
         <div class="grid-lines"></div>
         <div class="floating-particles"></div>
     </div>
-
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">JM</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
+            <div class="nav-logo"><span class="logo-text">JM</span></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="typing-text">Jeevana Muninarayana</span>
-                    </h1>
+                    <h1 class="hero-title">Jeevana Muninarayana</h1>
                     <h2 class="hero-subtitle">Senior Security Engineer</h2>
-                    <p class="hero-description">
-                        Specializing in application security, threat analysis, and secure systems engineering. 
-                        Passionate about protecting digital assets and building resilient security frameworks.
-                    </p>
+                    <p class="hero-description">Building security programs with a first-hire mindset. Specializing in product security, cloud infrastructure security, and detection &amp; response — embedding lightweight Secure SDLC practices that engineering teams actually adopt.</p>
+                    <div class="hero-tags">
+                        <span class="hero-tag">Product Security</span>
+                        <span class="hero-tag">Cloud Security</span>
+                        <span class="hero-tag">SOC 2 / HIPAA</span>
+                        <span class="hero-tag">Secure SDLC</span>
+                        <span class="hero-tag">Detection &amp; Response</span>
+                        <span class="hero-tag">DevSecOps</span>
+                    </div>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            View Projects
-                        </a>
-                        <a href="./assets/Jeevana Muninarayana - Resume.pdf" class="btn btn-secondary" target="_blank">
-                            <i class="fas fa-download"></i>
-                            Resume
-                        </a>
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+                        <a href="./resume.html" target="_blank" class="btn btn-secondary"><i class="fas fa-download"></i> Resume</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="image-container">
-                        <img src="./assets/my-photo.jpeg" alt="Jeevana Muninarayana" class="profile-img">
+                        <img src="./assets/profile.jpg" alt="Jeevana Muninarayana" class="profile-img" onerror="this.style.display='none'">
                         <div class="image-overlay"></div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
-            </div>
         </div>
+        <div class="scroll-indicator"><div class="scroll-arrow"></div></div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- About -->
+    <section id="about" class="section about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">About Me</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">
-                    Dedicated to securing the digital world through innovative cybersecurity solutions
-                </p>
+                <p class="section-subtitle">Dedicated to securing the digital world through measurable, engineering-friendly security</p>
             </div>
-            <div class="about-content fade-in">
-                <p class="about-intro">
-                    I'm a passionate Senior Security Engineer with expertise in application security, 
-                    threat analysis, and secure systems engineering. Currently seeking STEM-OPT-based 
-                    opportunities in the United States to contribute to cutting-edge security initiatives.
-                </p>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Security First</h3>
-                        <p>Implementing security-by-design principles in every project, ensuring robust protection from the ground up.</p>
+            <div class="about-grid">
+                <div class="about-text slide-in-left">
+                    <h3>First Security Hire. Program Builder. Engineering Partner.</h3>
+                    <p>I'm a Senior Security Engineer with 4+ years securing cloud-based SaaS products across product security, cloud infrastructure, and detection &amp; response. I build security programs from scratch with a first-hire mindset — defining standards, implementing tooling, and embedding Secure SDLC practices that engineering teams actually adopt without friction.</p>
+                    <p>I partner with GTM teams to articulate security posture for customer security reviews, RFPs, and enterprise questionnaires — translating technical controls into auditor- and customer-friendly language that helps win and retain larger customers.</p>
+                    <p>My strength is making security measurable: documenting crown jewels, data flows, and key risks; running structured vulnerability management with engineering SLAs; and delivering repeatable SOC 2/HIPAA evidence workflows. Currently based in Jersey City, NJ and open to remote opportunities across the US.</p>
+                </div>
+                <div class="about-stats slide-in-right">
+                    <div class="stat-item">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years in Security Engineering</div>
                     </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-code"></i>
-                        <h3>Secure Development</h3>
-                        <p>Expertise in secure coding practices, vulnerability assessment, and penetration testing methodologies.</p>
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Remediation Closure in 60 Days</div>
                     </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-search"></i>
-                        <h3>Threat Analysis</h3>
-                        <p>Proactive threat hunting, security incident response, and comprehensive risk assessment capabilities.</p>
+                    <div class="stat-item">
+                        <div class="stat-number">42</div>
+                        <div class="stat-label">Security Gaps Identified &amp; Tracked</div>
                     </div>
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Vendor Security Reviews Led</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-highlights">
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security First</h3>
+                    <p>Implementing security-by-design principles in every project, ensuring robust protection from the ground up with a first-hire mindset.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Secure Development</h3>
+                    <p>Embedding threat modeling, design reviews, and secure coding guidelines into CI/CD pipelines — reducing late-stage security fixes and rework.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-search"></i>
+                    <h3>Threat Analysis</h3>
+                    <p>Proactive threat hunting, security incident response, and comprehensive risk assessment using MITRE ATT&amp;CK and real-world TTP simulation.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Security</h3>
+                    <p>Hardening AWS and Azure environments with secure-by-default baselines, IAM policy audits, secrets management, and infrastructure-as-code enforcement.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>SOC 2 &amp; Compliance</h3>
+                    <p>Building audit-ready evidence workflows and control-testing systems that improved on-time SOC 2/HIPAA evidence delivery from 70% to 95%.</p>
+                </div>
+                <div class="highlight-item fade-in">
+                    <i class="fas fa-robot"></i>
+                    <h3>Detection &amp; Response</h3>
+                    <p>Designing and operating logging, monitoring, and alerting pipelines — tuning detection logic to reduce false positives while improving investigation quality.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <!-- Skills -->
+    <section id="skills" class="section skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">
-                    Comprehensive expertise across cybersecurity tools, technologies, and methodologies
-                </p>
+                <p class="section-subtitle">Comprehensive expertise across cybersecurity tools, technologies, and methodologies</p>
             </div>
-            <div class="skills-grid fade-in">
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-tools"></i>
-                        Security Tools
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Burp Suite</span>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>OWASP ZAP</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Nessus</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Metasploit</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3 class="category-title"><i class="fas fa-shield-alt"></i> Security Tools</h3>
+                    <div class="skill-item"><div class="skill-name"><span>Burp Suite</span><span class="skill-percentage">90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>OWASP ZAP</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Splunk / Sentinel</span><span class="skill-percentage">88%</span></div><div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Nessus</span><span class="skill-percentage">80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>CrowdStrike EDR</span><span class="skill-percentage">78%</span></div><div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div></div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-code"></i>
-                        Programming
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Python</span>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Java</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>C++</span>
-                                <span class="skill-percentage">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-category fade-in">
+                    <h3 class="category-title"><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-item"><div class="skill-name"><span>Python</span><span class="skill-percentage">90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Bash / PowerShell</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>JavaScript</span><span class="skill-percentage">75%</span></div><div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Java</span><span class="skill-percentage">70%</span></div><div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Terraform / Ansible</span><span class="skill-percentage">72%</span></div><div class="skill-bar"><div class="skill-progress" data-width="72%"></div></div></div>
                 </div>
-
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-cloud"></i>
-                        Cloud & Infrastructure
-                    </h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>AWS Security</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Docker</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Kubernetes</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Linux Administration</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-category fade-in">
+                    <h3 class="category-title"><i class="fas fa-cloud"></i> Cloud &amp; Infrastructure</h3>
+                    <div class="skill-item"><div class="skill-name"><span>AWS Security</span><span class="skill-percentage">88%</span></div><div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Azure / Sentinel</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Docker / Kubernetes</span><span class="skill-percentage">78%</span></div><div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>Linux Administration</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>GCP Security</span><span class="skill-percentage">80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3 class="category-title"><i class="fas fa-file-certificate"></i> Compliance &amp; Frameworks</h3>
+                    <div class="skill-item"><div class="skill-name"><span>NIST CSF / CIS Controls</span><span class="skill-percentage">90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>SOC 2 / HIPAA</span><span class="skill-percentage">88%</span></div><div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>MITRE ATT&amp;CK</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>ISO 27001 / PCI DSS</span><span class="skill-percentage">80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-name"><span>GDPR</span><span class="skill-percentage">75%</span></div><div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects section">
+    <!-- Projects -->
+    <section id="projects" class="section projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">
-                    Innovative cybersecurity solutions and security-focused applications
-                </p>
+                <p class="section-subtitle">Innovative cybersecurity solutions and security-focused applications</p>
             </div>
-            <div class="projects-grid fade-in">
-                
+            <div class="projects-grid">
+                <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-bug project-placeholder"></i>
+                        <i class="fas fa-brain project-placeholder"></i>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href=https://github.com/jeevana-muninarayana/OpenSecOps-AI#" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="project-link" title="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
+                                <a href="https://github.com/jeevana-muninarayana/OpenSecOps-AI" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                            <h3 class="project-title">OpenSecOps AI</h3>                        <p class="project-description">
-                            <p class="project-description">
-                                Built behavior-based threat simulations to validate detections against attacker TTPs, improved alert fidelity by 40%, 
-                                and published reusable detection design patterns, investigation playbooks, and tuning guidance for security operations.
-                            </p>
-                            <div class="project-tech">                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">REST API</span>
-                            <span class="tech-tag">OWASP</span>
-                        </div>
+                        <h3 class="project-title">OpenSecOps AI</h3>
+                        <p class="project-description">Built behavior-based threat simulations to validate detections against attacker TTPs, improved alert fidelity by 40%, and published reusable detection design patterns, investigation playbooks, and tuning guidance for security operations.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">SQLite</span><span class="tech-tag">REST API</span><span class="tech-tag">OWASP</span></div>
                     </div>
                 </div>
-
-            
+                <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-lock project-placeholder"></i>
+                        <i class="fas fa-tasks project-placeholder"></i>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/jeevana-muninarayana/compliance-remediator" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="project-link" title="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
+                                <a href="https://github.com/jeevana-muninarayana/compliance-remediator" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                            <h3 class="project-title">Compliance Remediator</h3>                        <p class="project-description">
-Automated compliance monitoring tool for CIS benchmarks and security policies. Performs continuous scanning, generates remediation scripts, and tracks security posture across infrastructure.                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">bcrypt</span>
-                        </div>
+                        <h3 class="project-title">Compliance Remediator</h3>
+                        <p class="project-description">Automated remediation tracking and validation pipeline integrating SIEM findings with infrastructure-as-code changes. Closed audit gaps by 60% while preserving change safety, auditability, and repeatable evidence workflows.</p>
+                        <div class="project-tech"><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">JWT</span><span class="tech-tag">bcrypt</span></div>
                     </div>
                 </div>
-
-        
-                    <div class="project-image">
-                        <i class="fas fa-network-wired project-placeholder"></i>
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/jeevana-muninarayana/AutoSleuth" class="project-link" title="View Code">                                    " class="project-link" title="View Code">                                    ">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AutoSleuth
-                            
-                        </h3>
-                        <p class="project-description">
-                    An autonomous alert enrichment and promotion engine inspired by Expel. Automates security alert triage, enrichment, and escalation decisions.                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scapy</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Wireshark</span>
-                        </div>
-                    </div>
-                </div>
-
-        
+                <div class="project-card fade-in">
                     <div class="project-image">
                         <i class="fas fa-key project-placeholder"></i>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/jeevana-muninarayana/cloud-security-audit" class="project-link" title="View Code">                                    ">
-                                    <i class="fab fa-github"></i>
-                                </a>
+                                <a href="https://github.com/jeevana-muninarayana/AutoSleuth" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Cloud Security Audit
-                        </h3>
-                        <p class="project-description">
-                    Cloud security audit and compliance scanning tool. Automates security assessments across AWS/Azure/GCP environments.1380
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">OpenSSL</span>
-                            <span class="tech-tag">AES</span>
-                            <span class="tech-tag">RSA</span>
-                        </div>
+                        <h3 class="project-title">AutoSleuth</h3>
+                        <p class="project-description">An autonomous alert enrichment and promotion engine inspired by Expel. Automates security alert triage, enrichment, and escalation decisions to reduce analyst workload and improve response speed.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Scapy</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">Wireshark</span></div>
                     </div>
                 </div>
-
-                1370
-        
+                <div class="project-card fade-in">
                     <div class="project-image">
-                        <i class="fas fa-shield-alt project-placeholder"></i>
+                        <i class="fas fa-cloud-upload-alt project-placeholder"></i>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" title="1330
-                                    ">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="project-link" title="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
+                                <a href="https://github.com/jeevana-muninarayana/cloud-security-audit" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Security Incident Response Platform</h3>
-                        <p class="project-description">
-                            Comprehensive incident response platform with automated threat detection, case management, 
-                            forensic analysis tools, and integration with popular SIEM solutions for enterprise security.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">ELK Stack</span>
-                        </div>
+                        <h3 class="project-title">Cloud Security Audit</h3>
+                        <p class="project-description">Cloud security audit and compliance scanning tool. Automates security assessments across AWS, Azure, and GCP environments with policy validation and remediation recommendations.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">AWS SDK</span><span class="tech-tag">Terraform</span><span class="tech-tag">CIS Benchmarks</span></div>
                     </div>
                 </div>
-
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-user-lock project-placeholder"></i>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href=https://github.com/jeevana-muninarayana/security-incident-response#" class="project-link" title="View Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="project-link" title="Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
+                                <a href="https://github.com/jeevana-muninarayana/iam-governance-tracker" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Mobile Security Analyzer</h3>
-                        <p class="project-description">
-                            Mobile application security testing framework with static and dynamic analysis capabilities, 
-                            APK reverse engineering tools, and comprehensive vulnerability assessment for Android applications.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Android SDK</span>
-                            <span class="tech-tag">Frida</span>
-                            <span class="tech-tag">APKTool</span>
+                        <h3 class="project-title">IAM Governance Tracker</h3>
+                        <p class="project-description">Implemented detections for privilege escalation and suspicious access patterns. Strengthened forensics-ready logging for identity events and reduced unauthorized access risk by 35%.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">AWS IAM</span><span class="tech-tag">Splunk</span><span class="tech-tag">MITRE ATT&amp;CK</span></div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line project-placeholder"></i>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/jeevana-muninarayana" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Threat Intelligence Dashboard</h3>
+                        <p class="project-description">Real-time security dashboard integrating threat feeds from MITRE ATT&amp;CK, AlienVault OTX, and VirusTotal. Threat correlation algorithms identified 80% of high-risk threats before escalation, minimizing false positives by 35%.</p>
+                        <div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">Splunk</span><span class="tech-tag">ELK Stack</span><span class="tech-tag">Grafana</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Experience Section -->
-    <section 1500
-        1460
-        1470
-        1480
-        1510
-        1470
-        class="experience section">
+    <!-- Experience -->
+    <section id="experience" class="section experience">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Experience</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">
-                    Professional journey in cybersecurity and software development
-                </p>
+                <p class="section-subtitle">Professional journey in cybersecurity and software development</p>
             </div>
-            <div class="experience-timeline fade-in">
-                <div class="timeline-item">
+            <div class="experience-timeline">
+                <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                            <div class="timeline-date">Oct 2025 - Present</div>                        <h3 class="timeline-title">Security Lead</h3>
-                            <h3 class="timeline-title">Senior Security & Privacy Engineer</h3>                            Conducted comprehensive security assessments, implemented threat detection systems, 
-                            <div class="timeline-company">EVONAIRE INC.</div>                            security testing and vulnerability management.                                Leading security initiatives for a growing startup, including SSH hardening, SSL/TLS certificate management, 
-                                Owned company-wide security posture validation across 8 production applications and 30 data-processing workflows—documented crown jewels, data flows, and trust boundaries—identified 42 gaps and drove 85% remediation closure in 60 days via prioritized backlogs and fix verification. Built security governance from the ground up—defined and documented core security policies (access control, change management, incident response, vendor management) with clear owners and review cadence. Embedded Secure SDLC into delivery workflows by introducing threat modeling prompts, design review checkpoints, and secure coding guideline verification into PR/release checklists—reducing late-stage security fixes and rework. Built audit-ready evidence and control-testing system (templates, owners, cadence) that improved on-time SOC 2/HIPAA evidence delivery from 70% to 95% and reduced audit prep effort by 35%. Led vendor security reviews for 18 third parties and served as security point of contact for customer security reviews, translating technical controls into customer-friendly language and supporting RFP/questionnaire responses. Established structured vulnerability management with engineering—prioritized findings, set remediation SLAs, tracked closure, and built engineering partnership around practical, risk-based fixes.                                and managing full-stack development with Django, React, and React Native.
-                            </p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                            <div class="timeline-date">2023 - 2024</div>                        <h3 class="timeline-title">Full-Stack Engineer</h3>
-                        <div class="timeline-company">CDF</div>
-                        <p class="timeline-description">
-                            Assisted in penetration testing engagements, performed code reviews for security 
-                            vulnerabilities, and contributed to the development of automated security testing tools. 
-                            Gained expertise in cloud security and DevSecOps practices.
-                        </p>
+                        <div class="timeline-date">Oct 2025 &ndash; Present</div>
+                        <div class="timeline-title">Senior Security &amp; Privacy Engineer</div>
+                        <div class="timeline-company">Evonaire Inc. &mdash; Remote, US &nbsp;|&nbsp; First Dedicated Security Role</div>
+                        <ul class="timeline-bullets">
+                            <li>Owned company-wide security posture validation across <strong>8 production applications</strong> and <strong>30 data-processing workflows</strong> &mdash; documented crown jewels, data flows, and trust boundaries; identified <strong>42 gaps</strong> and drove <strong>85% remediation closure in 60 days</strong>.</li>
+                            <li>Built security governance from the ground up &mdash; defined and documented core security policies (access control, change management, incident response, vendor management) with clear owners and review cadence.</li>
+                            <li>Embedded <strong>Secure SDLC</strong> into delivery workflows by introducing threat modeling prompts, design review checkpoints, and secure coding guideline verification into PR/release checklists &mdash; reducing late-stage security fixes and rework.</li>
+                            <li>Built audit-ready evidence and control-testing system that improved on-time <strong>SOC 2/HIPAA evidence delivery from 70% to 95%</strong> and reduced audit prep effort by <strong>35%</strong>.</li>
+                            <li>Led vendor security reviews for <strong>18 third parties</strong> and served as security point of contact for customer security reviews, translating technical controls into customer-friendly language for RFP/questionnaire responses.</li>
+                            <li>Established structured vulnerability management with engineering &mdash; prioritized findings, set remediation SLAs, tracked closure, and built engineering partnership around practical, risk-based fixes.</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="timeline-item">
+                <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2023</div>
-                        <h3 class="timeline-title">Security Intern</h3>
-                        <div class="timeline-company">Infosys</div>
-                        <p class="timeline-description">
-                            Supported security operations center (SOC) activities, analyzed security logs, 
-                            and assisted in incident response procedures. Developed skills in threat hunting 
-                            and security monitoring using SIEM tools.
-                        </p>
+                        <div class="timeline-date">Nov 2024 &ndash; Sep 2025</div>
+                        <div class="timeline-title">Security Software Engineer</div>
+                        <div class="timeline-company">Community Dreams Foundation &mdash; Remote, US &nbsp;|&nbsp; Detection, Response &amp; Logging</div>
+                        <ul class="timeline-bullets">
+                            <li>Designed and operated logging, monitoring, and alerting pipelines across <strong>AWS and Azure</strong> for application/API/infrastructure telemetry &mdash; standardizing security event feeds into Splunk/Sentinel and improving <strong>detection fidelity by 38%</strong>.</li>
+                            <li>Tuned detection logic (correlation rules, thresholds, suppression) around real-world exploit patterns (OWASP Top 10, TTPs) &mdash; reducing <strong>false positives by 25%</strong> while improving investigation quality and response speed.</li>
+                            <li>Hardened cloud environments by implementing secure-by-default baselines for AWS IAM roles, VPC security groups, secrets management, and audit logging &mdash; enforced via <strong>infrastructure-as-code</strong>.</li>
+                            <li>Co-developed incident response plans, runbooks, and playbooks (containment, rollback, data validation, post-incident review) &mdash; contributing to <strong>20% reduction in downtime incidents</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2023 &ndash; Jun 2024</div>
+                        <div class="timeline-title">Graduate Research Assistant</div>
+                        <div class="timeline-company">Pace University &mdash; New York, NY &nbsp;|&nbsp; Security &amp; Detection Research</div>
+                        <ul class="timeline-bullets">
+                            <li>Built evaluation criteria for anomaly-based detection to improve signal-to-noise ratio &mdash; informing detection engineering strategy and improving <strong>response outcomes by 30%</strong>.</li>
+                            <li>Simulated attacker behaviors and exploit patterns to validate monitoring thresholds &mdash; converted findings into reusable investigation playbooks and detection/logging recommendations for security and engineering teams.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Nov 2021 &ndash; Jul 2022</div>
+                        <div class="timeline-title">Senior Systems Engineer</div>
+                        <div class="timeline-company">Infosys Ltd. &mdash; Bangalore, India</div>
+                        <ul class="timeline-bullets">
+                            <li>Improved incident triage, escalation, and cross-functional coordination for security/abuse incidents by refining severity criteria and routing logic &mdash; reducing <strong>containment time by 25%</strong>.</li>
+                            <li>Built security analytics dashboards and KPI reporting across <strong>90+ environments</strong> to improve leadership visibility into risk exposure, control coverage, and remediation progress.</li>
+                            <li>Spearheaded security hardening for <strong>Microsoft Azure and AWS</strong>, minimizing attack surfaces by 40% across 200+ cloud resources.</li>
+                            <li>Architected <strong>Zero Trust IAM policies</strong>, safeguarding access for 5,000+ users and reducing unapproved access attempts by 60%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Nov 2019 &ndash; Oct 2021</div>
+                        <div class="timeline-title">Systems Engineer</div>
+                        <div class="timeline-company">Infosys Ltd. &mdash; Mysore, India</div>
+                        <ul class="timeline-bullets">
+                            <li>Automated <strong>SIEM alert enrichment</strong> workflow routing using Python/Bash to improve detection context and operational throughput &mdash; reducing false positives by 20%.</li>
+                            <li>Authored and maintained security runbooks standardizing triage steps, escalation criteria, and documentation requirements &mdash; improving consistency across teams and shifts.</li>
+                            <li>Administered user access controls for <strong>10,000+ users</strong> across AWS IAM, Okta, and Azure AD &mdash; reducing access-related incidents by 40%.</li>
+                            <li>Pioneered vulnerability assessments and patch management, achieving <strong>98% compliance</strong> with NIST and CIS benchmarks.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Contact -->
+    <section id="contact" class="section contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">
-                    Let's discuss cybersecurity opportunities and innovative security solutions
-                </p>
+                <p class="section-subtitle">Let's discuss cybersecurity opportunities and innovative security solutions</p>
             </div>
-            <div class="contact-content fade-in">
-                <div class="contact-info">
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
                     <h3>Let's Connect</h3>
-                    <p>
-                        I'm always interested in discussing cybersecurity opportunities, collaborating on 
-                        innovative security solutions, and connecting with fellow security professionals. 
-                        Feel free to reach out for networking, job opportunities, or project collaborations.
-                    </p>
+                    <p>I'm always interested in discussing cybersecurity opportunities, collaborating on security solutions, and connecting with fellow security professionals. Feel free to reach out for networking, job opportunities, or project collaborations.</p>
                     <div class="contact-links">
-                        <a href="mailto:mjeevana00@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>mjeevana00@gmail.com</span>
-                        </a>
-                        <a href="https://linkedin.com/in/jeevana-muninarayana" class="contact-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn Profile</span>
-                        </a>
-                        <a href="https://github.com/jeevana-muninarayana" class="contact-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub Profile</span>
-                        </a>
-                        <a href="tel:+1234567890" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (551) 344-7268</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jersey City, NJ</span>
-                        </a>
+                        <a href="mailto:mjeevana00@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> mjeevana00@gmail.com</a>
+                        <a href="https://linkedin.com/in/jeevana-muninarayana" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/jeevana-muninarayana</a>
+                        <a href="https://github.com/jeevana-muninarayana" target="_blank" class="contact-link"><i class="fab fa-github"></i> github.com/jeevana-muninarayana</a>
+                        <a href="tel:5513447268" class="contact-link"><i class="fas fa-phone"></i> +1 (551) 344-7268</a>
+                        <div class="contact-link"><i class="fas fa-map-marker-alt"></i> Jersey City, NJ &mdash; Open to Remote</div>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form slide-in-right">
+                    <div id="formStatus" class="form-status"></div>
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -1546,421 +604,148 @@ Automated compliance monitoring tool for CIS benchmarks and security policies. P
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
+                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Jeevana Muninarayana. All rights reserved. | Senior Security Engineer</p>
+            <p>&copy; 2026 Jeevana Muninarayana. All rights reserved. | Senior Security Engineer</p>
         </div>
     </footer>
-
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Enhanced JavaScript functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all functionality
-            initializeNavigation();
-            initializeAnimations();
-            initializeTypingEffect();
-            initializeSkillBars();
-            initializeParticles();
-            initializeContactForm();
-            initializeMobileMenu();
-            initializeScrollEffects();
-        });
-
-        // Navigation functionality
-        function initializeNavigation() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section[id]');
-
-            // Smooth scrolling
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Close mobile menu if open
-                        const navMenu = document.querySelector('.nav-menu');
-                        const hamburger = document.querySelector('.hamburger');
-                        navMenu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    }
-                });
-            });
-
-            // Active section highlighting
-            function updateActiveSection() {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveSection);
-        }
-
-        // Animation functionality
-        function initializeAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements with animation classes
-            const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-            animatedElements.forEach(el => observer.observe(el));
-        }
-
-        // Typing effect for hero title
-        function initializeTypingEffect() {
-            const typingText = document.querySelector('.typing-text');
-            if (!typingText) return;
-
-            const text = 'Jeevana Muninarayana';
-            let index = 0;
-            
-            typingText.textContent = '';
-            
-            function typeWriter() {
-                if (index < text.length) {
-                    typingText.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    // Add blinking cursor effect
-                    setTimeout(() => {
-                        typingText.style.borderRight = '2px solid var(--primary-blue)';
-                        typingText.style.animation = 'blink 1s infinite';
-                    }, 500);
-                }
-            }
-            
-            // Start typing after a short delay
-            setTimeout(typeWriter, 1000);
-        }
-
-        // Skill bars animation
-        function initializeSkillBars() {
-            const skillsSection = document.querySelector('.skills');
-            if (!skillsSection) return;
-
-            const observerOptions = {
-                threshold: 0.5,
-                rootMargin: '0px 0px -100px 0px'
-            };
-
-            const skillsObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const skillBars = entry.target.querySelectorAll('.skill-progress');
-                        skillBars.forEach((bar, index) => {
-                            setTimeout(() => {
-                                const width = bar.getAttribute('data-width');
-                                bar.style.width = width;
-                            }, index * 200);
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            skillsObserver.observe(skillsSection);
-        }
-
-        // Floating particles
-        function initializeParticles() {
-            const particlesContainer = document.querySelector('.floating-particles');
-            if (!particlesContainer) return;
-
-            const particleCount = 80;
-            const colors = ['#00d4ff', '#00ff88', '#8b5cf6', '#ff3366'];
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const size = Math.random() * 3 + 1;
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 5;
-
-                particle.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    background: ${color};
-                    border-radius: 50%;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation: float ${duration}s linear infinite;
-                    animation-delay: ${delay}s;
-                    opacity: ${0.3 + Math.random() * 0.5};
-                    pointer-events: none;
-                `;
-                
-                particlesContainer.appendChild(particle);
-            }
-
-            // Add particle animation styles
-            if (!document.querySelector('#particle-styles')) {
-                const style = document.createElement('style');
-                style.id = 'particle-styles';
-                style.textContent = `
-                    @keyframes float {
-                        0% {
-                            transform: translateY(100vh) rotate(0deg);
-                            opacity: 0;
-                        }
-                        10% {
-                            opacity: 1;
-                                                    }
-                        90% {
-                            opacity: 1;
-                        }
-                        100% {
-                            transform: translateY(-100vh) rotate(360deg);
-                            opacity: 0;
-                        }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // Contact form functionality
-        function initializeContactForm() {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-
-            contactForm.addEventListener('submit', function(e) {
+    (function() { emailjs.init({ publicKey: 'YOUR_EMAILJS_PUBLIC_KEY' }); })();
+    document.addEventListener('DOMContentLoaded', function() {
+        initNav();
+        initAnimations();
+        initSkillBars();
+        initParticles();
+        initContactForm();
+        initMobileMenu();
+        initScrollTop();
+    });
+    function initNav() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(this);
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const subject = formData.get('subject');
-                const message = formData.get('message');
-
-                // Simple validation
-                if (!name || !email || !subject || !message) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-
-                // Simulate form submission
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
-
-                setTimeout(() => {
-                    alert('Thank you for your message! I\'ll get back to you soon.');
-                    this.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
             });
-        }
-
-        // Mobile menu functionality
-        function initializeMobileMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (!hamburger || !navMenu) return;
-
-            hamburger.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-
-            // Close menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            });
-        }
-
-        // Scroll effects
-        function initializeScrollEffects() {
-            const navbar = document.querySelector('.navbar');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    navbar.style.background = 'rgba(18, 18, 18, 0.98)';
-                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-                } else {
-                    navbar.style.background = 'rgba(18, 18, 18, 0.95)';
-                    navbar.style.boxShadow = 'none';
-                }
-            });
-
-            // Parallax effect for hero section
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                window.addEventListener('scroll', function() {
-                    const scrolled = window.pageYOffset;
-                    const parallax = hero.querySelector('.hero-content');
-                    if (parallax) {
-                        parallax.style.transform = `translateY(${scrolled * 0.1}px)`;
-                    }
-                });
-            }
-        }
-
-        // Add CSS for blinking cursor
-        const cursorStyle = document.createElement('style');
-        cursorStyle.textContent = `
-            @keyframes blink {
-                0%, 50% { border-color: var(--primary-blue); }
-                51%, 100% { border-color: transparent; }
-            }
-        `;
-        document.head.appendChild(cursorStyle);
-
-        // Smooth reveal on scroll
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-            
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('visible');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', revealOnScroll);
-
-        // Initialize theme toggle (optional)
-        function initializeThemeToggle() {
-            const themeToggle = document.querySelector('.theme-toggle');
-            if (!themeToggle) return;
-
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('light-theme');
-                localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
-            });
-
-            // Load saved theme
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-            }
-        }
-
-        // Performance optimization
-        function optimizeImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.loading = 'lazy';
-            });
-        }
-
-        // Call optimization functions
-        optimizeImages();
-
-        // Add loading animation
-        window.addEventListener('load', function() {
-            const loader = document.querySelector('.loader');
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
         });
-
-        // Add scroll to top functionality
-        const scrollToTop = document.createElement('button');
-        scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-        scrollToTop.className = 'scroll-to-top';
-        scrollToTop.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            color: var(--primary-dark);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            font-size: 1.2rem;
-        `;
-
-        document.body.appendChild(scrollToTop);
-
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollToTop.style.opacity = '1';
-                scrollToTop.style.visibility = 'visible';
-            } else {
-                scrollToTop.style.opacity = '0';
-                scrollToTop.style.visibility = 'hidden';
+            let current = '';
+            sections.forEach(s => { if (window.pageYOffset >= s.offsetTop - 250) current = s.getAttribute('id'); });
+            navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+            const nb = document.querySelector('.navbar');
+            nb.style.background = window.scrollY > 100 ? 'rgba(18,18,18,0.98)' : 'rgba(18,18,18,0.95)';
+        });
+    }
+    function initAnimations() {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => obs.observe(el));
+    }
+    function initSkillBars() {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-progress').forEach((bar, i) => {
+                        setTimeout(() => { bar.style.width = bar.getAttribute('data-width'); }, i * 150);
+                    });
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        const skillsSection = document.querySelector('.skills');
+        if (skillsSection) obs.observe(skillsSection);
+    }
+    function initParticles() {
+        const c = document.querySelector('.floating-particles');
+        if (!c) return;
+        const colors = ['#00d4ff','#00ff88','#8b5cf6','#ff3366'];
+        for (let i = 0; i < 60; i++) {
+            const p = document.createElement('div');
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const size = Math.random() * 3 + 1;
+            const dur = Math.random() * 20 + 10;
+            p.style.cssText = `position:absolute;width:${size}px;height:${size}px;background:${color};border-radius:50%;left:${Math.random()*100}%;top:${Math.random()*100}%;animation:floatUp ${dur}s linear infinite;animation-delay:${Math.random()*5}s;opacity:${0.3+Math.random()*0.4};pointer-events:none;`;
+            c.appendChild(p);
+        }
+        const s = document.createElement('style');
+        s.textContent = '@keyframes floatUp{0%{transform:translateY(100vh);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100vh);opacity:0}}';
+        document.head.appendChild(s);
+    }
+    function initContactForm() {
+        const form = document.getElementById('contactForm');
+        const status = document.getElementById('formStatus');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            status.className = 'form-status';
+            const params = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: 'mjeevana00@gmail.com'
+            };
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params)
+                .then(function() {
+                    status.textContent = 'Message sent successfully! I will get back to you soon.';
+                    status.className = 'form-status success';
+                    form.reset();
+                    btn.innerHTML = orig;
+                    btn.disabled = false;
+                }, function(err) {
+                    status.textContent = 'Failed to send. Please email me directly at mjeevana00@gmail.com';
+                    status.className = 'form-status error';
+                    btn.innerHTML = orig;
+                    btn.disabled = false;
+                });
+        });
+    }
+    function initMobileMenu() {
+        const ham = document.getElementById('hamburger');
+        const menu = document.getElementById('navMenu');
+        if (!ham) return;
+        ham.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            ham.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (!ham.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.remove('active');
+                ham.classList.remove('active');
             }
         });
-
-        scrollToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    }
+    function initScrollTop() {
+        const btn = document.createElement('button');
+        btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        btn.style.cssText = 'position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:linear-gradient(135deg,#00d4ff,#00ff88);color:#0a0a0a;border:none;border-radius:50%;cursor:pointer;opacity:0;visibility:hidden;transition:all 0.3s;z-index:1000;font-size:1.1rem;';
+        document.body.appendChild(btn);
+        window.addEventListener('scroll', () => {
+            btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+            btn.style.visibility = window.scrollY > 300 ? 'visible' : 'hidden';
         });
+        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
     </script>
 </body>
 </html>
