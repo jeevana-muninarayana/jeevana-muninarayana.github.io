@@ -249,6 +249,8 @@ footer a{color:#DCE4F2!important}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .results{opacity:1;transform:none}
 }
+body > button{background:var(--ink)!important;color:var(--fog)!important;border:2px solid var(--fog)!important;border-radius:12px!important;box-shadow:0 10px 24px -8px rgba(22,32,46,.5)!important}
+body > button:hover{background:var(--cobalt)!important}
 </style>
 </head>
 <body>
@@ -512,6 +514,7 @@ footer a{color:#DCE4F2!important}
     else{setTimeout(function(){q.innerHTML=html.join('');res.classList.add('show');},380);}
   }
   setTimeout(step,450);
+  window.addEventListener('load',function(){document.querySelectorAll('body > button').forEach(function(b){if(!b.getAttribute('aria-label'))b.setAttribute('aria-label','Back to top');});});
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('.nav-menu a');
     if(a&&window.innerWidth<=820){var m=document.getElementById('navMenu'),h=document.getElementById('hamburger');if(m)m.classList.remove('active');if(h)h.classList.remove('active');}
